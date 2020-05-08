@@ -12,7 +12,7 @@ String.prototype.trunc = function (n) {
 };
 
 $(function () {
-    var url = "https://spreadsheets.google.com/feeds/cells/1CS6TU1metcFNxhuWKDg7TmyPWdlffp7t-HTZbYdG5Ck/1/public/full?alt=json-in-script&callback=?";
+    var url = "https://spreadsheets.google.com/feeds/list/1CS6TU1metcFNxhuWKDg7TmyPWdlffp7t-HTZbYdG5Ck/1/public/full?alt=json-in-script&callback=?";
     $.getJSON(url, {}, function (data) {
         $.each(data.feed.entry, function (key, val) {
             var title = val.gsx$title.$t;
