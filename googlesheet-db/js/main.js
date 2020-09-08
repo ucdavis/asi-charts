@@ -226,6 +226,6 @@ function createDataTable() {
         "iDisplayLength": 20,
         "bLengthChange": false,
         "aaData": MyApp.spreadsheetData,
-        "aoColumns": MyApp.headerData,
+        "aoColumns": MyApp.headerData
     });
 }
