@@ -223,7 +223,7 @@ function createDataTable() {
             //{ "sType": "link-content", "aTargets": [ 0 ] },
             { "bVisible": false, "aTargets": [ -2, -3, -1 ] } //hide the keywords column for now (the last column, hence -1)
         ],
-        "order": [ 6, 'desc' ],
+        "order": [ 'year', 'desc' ],
         "iDisplayLength": 20,
         "bLengthChange": false,
         "aaData": MyApp.spreadsheetData,
