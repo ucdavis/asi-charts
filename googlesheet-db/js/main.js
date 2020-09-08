@@ -221,12 +221,12 @@ function createDataTable() {
     MyApp.oTable = $("#spreadsheet").dataTable({
         "aoColumnDefs": [
             //{ "sType": "link-content", "aTargets": [ 0 ] },
+            { "asSorting": [ "desc" ], "aTargets": [ 8 ] },
             { "bVisible": false, "aTargets": [ -2, -3, -1 ] } //hide the keywords column for now (the last column, hence -1)
         ],
         "iDisplayLength": 20,
         "bLengthChange": false,
         "aaData": MyApp.spreadsheetData,
         "aoColumns": MyApp.headerData,
-        "order": [[ 8, "desc" ]]
     });
 }
