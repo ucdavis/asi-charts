@@ -224,9 +224,9 @@ function createDataTable() {
             { "bVisible": false, "aTargets": [ -2, -3, -1 ] } //hide the keywords column for now (the last column, hence -1)
         ],
         "iDisplayLength": 20,
-        "order": [[ 3, "desc" ]],
         "bLengthChange": false,
         "aaData": MyApp.spreadsheetData,
-        "aoColumns": MyApp.headerData
+        "aoColumns": MyApp.headerData,
+        "order": [[ 8, "desc" ]]
     });
 }
