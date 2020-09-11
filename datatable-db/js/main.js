@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     var results = [];
     var url = "https://spreadsheets.google.com/feeds/list/1CS6TU1metcFNxhuWKDg7TmyPWdlffp7t-HTZbYdG5Ck/1/public/values?alt=json";
@@ -47,7 +48,9 @@ $(document).ready(function() {
           orthogonal:'sp'
         }
       }]}
-  	)})
+  	)
+            new $.fn.dataTable.FixedHeader(table);
+            })
   	.fail(function() {
     	console.log( "error" );
   	})
