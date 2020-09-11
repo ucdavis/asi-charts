@@ -13,6 +13,7 @@ $(document).ready(function() {
   		});
 	    var table = $('#example').DataTable( {
     		data: results,
+		    responsive: true,
         dom: 'Pfrtip',
         searchPanes:{
           controls: false,
