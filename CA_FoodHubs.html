@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#map_1574872906556 path:nth-child(5) {
+    fill: #D6D4C7;
+    }
+    
+#map_1574872906556 path:nth-child(5):hover {
+fill: #dedcd2;
+}  
+</style>
+
+<script src='https://maps.googleapis.com/maps/api/js?key=undefined' type='text/javascript'></script><script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script> 
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<script type='text/javascript'>google.charts.load('42', {'packages':['geochart']});
+google.charts.setOnLoadCallback(drawVisualization);
+
+  function drawVisualization() {var data = new google.visualization.DataTable();
+
+ data.addColumn('number', 'Lat'); 
+ data.addColumn('number', 'Lon'); 
+ data.addColumn('string', 'Country');
+ data.addColumn('number', 'Value'); 
+ data.addColumn({type:'string', role:'tooltip', p:{html:true}});var ivalue = new Array();
+
+data.addRows([[38.69517,-122.02191,'Capay Valley Farm Shop',0,'Community-owned social enterprise that<br>markets and distributes food from more<br>than 40 small and mid-sized farms<br>and ranches in Yolo County']]);
+ ivalue['38.69517'] = 'http://www.capayvalleyfarmshop.com/';
+
+ data.addRows([[36.85903,-121.53488,'Coke Farm',1,'Serves as a 100% organic food hub for<br>over 70+ growers in the Central Coast region.']]);
+ ivalue['36.85903'] = 'https://cokefarm.com/about-us/';
+
+ data.addRows([[37.70226,-122.12763,'Dig Deep Farms',2,'Certified community commercial kitchen<br>and distribution center that aggregates, processes<br>and distributes fresh produce to farm stands,<br>Food as Medicine Farmacies, and low-income housing<br>residents in Alameda county.']]);
+ ivalue['37.70226'] = 'https://www.acdsal.org/food-hub';
+
+ data.addRows([[38.2794,-122.66728,'FEED Sonoma',3,'Food-hub community of 80+ local farms,<br>supporting ecologically sustainable<br>farming and ranching practices.']]);
+ ivalue['38.2794'] = 'https://www.feedsonoma.com/';
+
+ data.addRows([[38.01806,-122.03192,'Fresh Approach',4,'Non-profit focusing on bringing locally-<br>grown produce, nutrition education, and <br>gardening skills to Bay Area communities.']]);
+ ivalue['38.01806'] = 'https://www.freshapproach.org/';
+
+ data.addRows([[37.804682,-122.291818,'Mandela Produce Distribution',5,'Non-profit prioritizing small family farmers<br>that grow sustainably and are located<br>within a 150 mile radius of West Oakland.']]);
+ ivalue['37.804682'] = 'https://www.mandeladistribution.com/about';
+
+ data.addRows([[39.15207,-123.2081,'Mendo-Lake Food Hub',6,'Non-profit that aggregates and distributes<br>produce from small farms around<br>Lake and Mendocino Counties.']]);
+ ivalue['39.15207'] = 'https://mendolakefoodhub.org/';
+
+ data.addRows([[41.52958,-120.17274,'Modoc Harvest Food Hub',7,'Community of food producers in Modoc<br>County and Washoe County, Nevada<br>that distributes local food to stores, restaurants,<br>and individual consumers in and around<br>Surprise Valley and Alturas.']]);
+ ivalue['41.52958'] = 'https://modocharvest.org/food-hub/';
+
+ data.addRows([[33.96595,-117.43638,'Riverside Unified School District Food Hub',8,'Provides nutrition education and buys<br>locally grown seasonal produce<br>and sells it to restaurants, child care centers,<br>mini produce markets, hospitals and schools<br>that do not have access to fresh produce.']]);
+ ivalue['33.96595'] = 'http://riversideunified.org/departments/nutritionservices/food_hub';
+
+ data.addRows([[39.32613,-120.21215,'Tahoe Food Hub',9,'Non-profit that aggregates food produced<br>within 100-150 miles of the Tahoe<br>region and distributes it regionally<br>throughout North Lake Tahoe. ']]);
+ ivalue['39.32613'] = 'https://www.tahoefoodhub.org/';
+
+ data.addRows([[37.75013,-122.38897,'Veritable Vegetable',10,'Women-owned organic produce distribution<br>company that sources produce, dairy and grocery<br>from small-to-large-scale producers and<br>delivers to businesses across multiple industries.']]);
+ ivalue['37.75013'] = 'https://veritablevegetable.com/';
+
+
+ var options = {
+ backgroundColor: {fill:'transparent',stroke:'#FFFFFF' ,strokeWidth:0 },
+ colorAxis:  {minValue: 0, maxValue: 1,  colors: ['#DAAA00','#DAAA00']},
+ legend: 'none',	
+ //animation: {"startup": true},
+ datalessRegionColor: '#FFFFFF',
+ displayMode: 'markers', 
+ enableRegionInteractivity: 'false', 
+ resolution: 'provinces',
+ sizeAxis: {minValue: 1, maxValue:1,minSize:8,  maxSize: 8},
+ region:'US-CA',
+ keepAspectRatio: true,
+ width:null,
+ height:null,
+ tooltip: {textStyle: {color: '#444444'}, trigger:'focus', isHtml: true}	
+ };
+  var chart = new google.visualization.GeoChart(document.getElementById('map_1574872906556')); 
+  google.visualization.events.addListener(chart, 'select', function() {
+  var selection = chart.getSelection();
+  if (selection.length == 1) {
+  var selectedRow = selection[0].row;
+  var selectedRegion = data.getValue(selectedRow, 0);
+  if(ivalue[selectedRegion] != '') { window.open(ivalue[selectedRegion]);  }
+  }
+  });
+ chart.draw(data, options);
+ }
+ </script>
+ <div id='map_1574872906556'></div>
+
+
+</head>
+</html>
