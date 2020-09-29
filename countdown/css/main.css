@@ -5,6 +5,10 @@ body {
     font-weight: lighter;
 }
 
+iframe{
+    overflow:hidden;
+}
+
 #timer {
     font-size: 3em;
     font-weight: 100;
