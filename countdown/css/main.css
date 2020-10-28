@@ -1,0 +1,28 @@
+body {
+    text-align: center;
+    padding: 70px 50px;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+iframe{
+    overflow:hidden;
+}
+
+#timer {
+    font-size: 3em;
+    font-weight: 100;
+    color: black;
+}
+
+#timer div {
+    display: inline-block;
+    min-width: 90px;
+}
+
+#timer div span {
+    color: #cc7000;
+    display: block;
+    font-size: .35em;
+    font-weight: 400;
+}
