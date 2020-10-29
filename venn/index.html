@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
          <style>
@@ -12,13 +12,28 @@
  </head>
 
 <body>
-    <p>Not sure why this isn't working</p>
+    <p>This really should work</p>
         <div id="venn"></div>
     </body>
-	        <script src="https://d3js.org/d3.v4.min.js"></script>
-    		<script src="http://benfred.github.io/venn.js/venn.js"></script>
-	    <script src="http://benfred.github.io/venn.js/examples/lastfm.jsonp"></script>
-//	     <script src="js/main.js"></script>	
+	<style>
+.venntooltip {
+  position: absolute;
+  text-align: center;
+  width: 128px;
+  height: 16px;
+  background: #333;
+  color: #ddd;
+  padding: 2px;
+  border: 0px;
+  border-radius: 8px;
+  opacity: 0;
+}
+</style>
+	
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="http://benfred.github.io/venn.js/venn.js"></script>
+<script src="http://benfred.github.io/venn.js/examples/lastfm.jsonp"></script>
+
 <script>	
 	var chart = venn.VennDiagram()
                  .width(500)
