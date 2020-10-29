@@ -15,7 +15,8 @@
     <p align="center">
         <div id="venn"></div></p>
     </body>
-	<style>
+<style>
+.center {margin:0 auto;}
 .venntooltip {
   position: absolute;
   text-align: center;
@@ -33,6 +34,7 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="js/venn.js"></script>
 <script src="js/venn.min.js"></script>
+<div class="center">
 <script>
 sets = [{
 	sets : ["ENV"],
@@ -111,4 +113,5 @@ div.selectAll("g")
     });
 console.log('end');
 	</script>
+</div>
 </html>
