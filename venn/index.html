@@ -28,7 +28,7 @@
 }
 </style>
 <body>
-		<p>Trying tooltips</p>
+		<p>Trying tooltips with custom text</p>
 		<div id="venn"></div>
     </body>
 	
@@ -40,14 +40,17 @@
 sets = [{
 	sets : ["ENV"],
 	label : "ENVIRONMENTAL HEALTH",
+	tip : "Environmental health is important and stuff",
 	size : 150
 }, {
 	sets : ["SOC"],
 	label : "SOCIAL EQUITY",
+	tip : "Environmental health is important and stuff",
 	size : 150	
 }, {
 	sets : ["ECON"],
 	label : "ECONOMIC PROFITABILITY",
+	tip : "Environmental health is important and stuff",
 	size : 150
 }, {
 	sets : ["ENV", "SOC"],
@@ -89,7 +92,7 @@ div.selectAll("g")
 
         // Display a tooltip with the current size
       tooltip.transition().duration(400).style("opacity", .9);
-      tooltip.text(d.size + " users");
+      tooltip.text(d.tip + " users");
 
         // highlight the current path
         var selection = d3.select(this).transition("tooltip").duration(400);
