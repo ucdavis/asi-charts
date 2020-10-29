@@ -88,8 +88,8 @@ div.selectAll("g")
         venn.sortAreas(div, d);
 
         // Display a tooltip with the current size
-      //  tooltip.transition().duration(400).style("opacity", .9);
-      //  tooltip.text(d.size + " users");
+      tooltip.transition().duration(400).style("opacity", .9);
+      tooltip.text(d.size + " users");
 
         // highlight the current path
         var selection = d3.select(this).transition("tooltip").duration(400);
