@@ -30,7 +30,7 @@ $(document).ready(function() {
             { title: "Material Type" },
 						{ title: "Link",
                 "render": function ( data, type, row, meta ) {
-      return '<a href="'+data+'">View File</a>';
+      return '<a href="'+data+'" target=_blank >View File</a>';
             },
              
         }],
