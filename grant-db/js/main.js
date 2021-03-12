@@ -25,13 +25,15 @@ $(document).ready(function() {
            "order": [ 1, 'desc' ],
        columns: [
             { title: "Program" },
-            { title: "Description" },
-            { title: "Specific Eligibilities" },
+            { title: "Farmers and Landowners Eligible?" },
+	    { title: "Institutions Eligible?" },
+            { title: "Detailed Eligibilities" },
             { title: "Application Window"},
             { title: "Type" },
             { title: "Match Requirement (grants only)" },
             { title: "Maximum Amount" },
-						{ title: "Link",
+	    { title: "Description" },
+	{ title: "Link",
                 "render": function ( data, type, row, meta ) {
       return '<a href="'+data+'">Learn More</a>';
             },
