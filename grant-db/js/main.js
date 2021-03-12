@@ -10,7 +10,7 @@ $(document).ready(function() {
     	console.log( "second success" );
         var entry = data.feed.entry;
  		$(entry).each(function(){
-            results.push([this.gsx$program.$t, this.gsx$category.$t, this.gsx$synopsis.$t, this.gsx$apply.$t, this.gsx$eligibilities.$t, this.gsx$window.$t, this.gsx$type.$t, this.gsx$match.$t, this.gsx$max.$t, this.gsx$link.$t]);
+            results.push([this.gsx$program.$t, this.gsx$category.$t, this.gsx$type.$t, this.gsx$synopsis.$t, this.gsx$apply.$t, this.gsx$eligibilities.$t, this.gsx$window.$t, this.gsx$match.$t, this.gsx$max.$t, this.gsx$link.$t]);
   		});
 	    var table = $('#example').DataTable( {
     		data: results,
@@ -20,17 +20,17 @@ $(document).ready(function() {
           controls: false,
           cascadePanes: true,
       threshold: 1,
-      columns: [1,3]
+      columns: [4]
     }, 
            "order": [ 0, 'desc' ],
        columns: [
             { title: "Program" },
 	    { title: "Category" },
+	    { title: "Type" },
 	    { title: "Description" },
 	    { title: "Who Can Apply" },
             { title: "Detailed Eligibilities" },
             { title: "Application Window"},
-            { title: "Type" },
             { title: "Match Requirement? (grants only)" },
             { title: "Maximum Amount" },
             { title: "Link",
@@ -41,7 +41,7 @@ $(document).ready(function() {
         }],
     	columnDefs: [
       {
-        targets: [3],
+        targets: [4],
         "visible": false,
         render: function (data, type, row) {
           if (type === 'sp') {
