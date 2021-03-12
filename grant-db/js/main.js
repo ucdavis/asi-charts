@@ -49,6 +49,7 @@ $(document).ready(function() {
           }
           return data;
         },
+	{ "width": "150%", "targets": 3 },
         searchPanes: {
           orthogonal:'sp'
         }
