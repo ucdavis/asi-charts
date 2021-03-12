@@ -20,9 +20,9 @@ $(document).ready(function() {
           controls: false,
           cascadePanes: true,
       threshold: 1,
-      columns: [8,9]
+      columns: [1,2]
     }, 
-           "order": [ 10, 'desc' ],
+           "order": [ 0, 'desc' ],
        columns: [
             { title: "Program" },
 	    { title: "Category" },
@@ -41,7 +41,7 @@ $(document).ready(function() {
         }],
     	columnDefs: [
       {
-        targets: [8],
+        targets: [2],
         "visible": false,
         render: function (data, type, row) {
           if (type === 'sp') {
