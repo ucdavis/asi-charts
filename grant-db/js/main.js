@@ -20,9 +20,9 @@ $(document).ready(function() {
           controls: false,
           cascadePanes: true,
       threshold: 1,
-      columns: [2,8]
+      columns: [8,9]
     }, 
-           "order": [ 1, 'desc' ],
+           "order": [ 10, 'desc' ],
        columns: [
             { title: "Program" },
 	    { title: "Category" },
