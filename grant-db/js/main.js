@@ -10,7 +10,7 @@ $(document).ready(function() {
     	console.log( "second success" );
         var entry = data.feed.entry;
  		$(entry).each(function(){
-            results.push([this.gsx$title.$t , this.gsx$year.$t, this.gsx$categories.$t, this.gsx$type.$t, this.gsx$link.$t]);
+            results.push([this.gsx$program.$t , this.gsx$farmers.$t, this.gsx$institutions.$t, this.gsx$eligibilities.$t, this.gsx$window.$t, this.gsx$type.$t, this.gsx$match.$t, this.gsx$max.$t, this.gsx$match.$synopsis, this.gsx$link.$t]);
   		});
 	    var table = $('#example').DataTable( {
     		data: results,
@@ -30,7 +30,20 @@ $(document).ready(function() {
             { title: "Material Type" },
 						{ title: "Link",
                 "render": function ( data, type, row, meta ) {
-      return '<a href="'+data+'">View File</a>';
+      return '<a href=" columns: [
+            { title: "Program" },
+            { title: "Description" },
+            { title: "Specific Eligibilities" },
+            { title: "Application Window"},
+            { title: "Type" },
+            { title: "Match Requirement (grants only)" },
+            { title: "Maximum Amount" },
+						{ title: "Link",
+                "render": function ( data, type, row, meta ) {
+      return '<a href="'+data+'">Learn More</a>';
+            },
+             
+        }],'+data+'">View File</a>';
             },
              
         }],
