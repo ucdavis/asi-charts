@@ -43,9 +43,6 @@ $(document).ready(function() {
       return '<a href="'+data+'">Learn More</a>';
             },
              
-        }],'+data+'">View File</a>';
-            },
-             
         }],
     	columnDefs: [
       {
