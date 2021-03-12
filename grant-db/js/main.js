@@ -26,7 +26,6 @@ $(document).ready(function() {
        columns: [
             { title: "Program" },
 	    { title: "Category" },
-            { title: "Who Can Apply" },
             { title: "Detailed Eligibilities" },
             { title: "Application Window"},
             { title: "Type" },
