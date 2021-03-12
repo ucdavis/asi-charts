@@ -49,7 +49,7 @@ $(document).ready(function() {
           }
           return data;
         },
-	{ "width": "200%", "targets": [3,4] },
+	{ "width": "200%", "targets": 3,4 },
         searchPanes: {
           orthogonal:'sp'
         }
