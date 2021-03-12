@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html lang="pt">
     <head>
         <meta charset="UTF-8">
@@ -11,4 +12,131 @@
 <div id="timer"></div>
 
     </body>
+=======
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+         <style>
+
+ body {
+          font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+          font-size: 16px;
+	  max-width: max-content;
+	  margin: auto;
+            }
+    </style>
+ </head>
+	
+<style>
+.venntooltip {
+  position: absolute;
+  text-align: center;
+  width: 128px;
+  background: #333;
+  color: #ddd;
+  font-size: 11px;
+  height: 22px;
+  padding: 2px;
+  border: 0px;
+  border-radius: 4px;
+  opacity: 0;
+}
+</style>
+<body>
+		<div id="venn"></div>
+    </body>
+	
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="js/venn.js"></script>
+<script src="js/venn.min.js"></script>
+
+<script>
+sets = [{
+	sets : ["ENV"],
+	label : "ENVIRONMENTALLY SOUND",
+	tip : "Biodiversity, Natural Resources",
+	size : 150
+}, {
+	sets : ["SOC"],
+	label : "SOCIALLY RESPONSIBLE",
+	tip : "Quality of Life",
+	size : 150	
+}, {
+	sets : ["ECON"],
+	label : "ECONOMICALLY VIABLE",
+	tip : "Profitability, Productivity",
+	size : 150
+}, {
+	sets : ["ENV", "SOC"],
+	tip : "Environmental Justice",
+	size : 50
+}, {
+	sets : ["ENV", "ECON"],
+	//label : "645k",
+	tip : "Ecosystem Services",
+	size : 50
+}, {
+	sets : ["ENV", "ECON", "SOC"],
+	//label : "645k",
+	tip : "Food System Health",
+	//size : 30
+}, {
+	sets : ["SOC", "ECON"],
+	tip : "Community Resilience",
+	size : 50
+}];
+
+console.log(sets);
+var chart = venn.VennDiagram()
+                 .width(500)
+                 .height(500);
+console.log('1');
+var div = d3.select("body")
+div.datum(sets).call(chart);
+console.log('1');
+
+var tooltip = d3.select("body").append("div")
+    .attr("class", "venntooltip");
+console.log('1');
+
+div.selectAll("path")
+    .style("stroke-opacity", 0)
+    .style("stroke", "#fff")
+    .style("stroke-width", 0)
+console.log('1');
+
+div.selectAll("g")
+    .on("mouseover", function(d, i) {
+        // sort all the areas relative to the current item
+        venn.sortAreas(div, d);
+
+        // Display a tooltip with the current size
+      tooltip.transition().duration(400).style("opacity", .9);
+      tooltip.text(d.tip);
+
+        // highlight the current path
+        var selection = d3.select(this).transition("tooltip").duration(400);
+        selection.select("path")
+            .style("stroke-width", 3)
+            .style("fill-opacity", d.sets.length == 1 ? .4 : .1)
+            .style("stroke-opacity", 1);
+    })
+
+    .on("mousemove", function() {
+        tooltip.style("left", (d3.event.pageX) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+    })
+
+    .on("mouseout", function(d, i) {
+        tooltip.transition().duration(400).style("opacity", 0);
+        var selection = d3.select(this).transition("tooltip").duration(400);
+        selection.select("path")
+            .style("stroke-width", 0)
+            .style("fill-opacity", d.sets.length == 1 ? .25 : .0)
+            .style("stroke-opacity", 0);
+    });
+console.log('end');
+	</script>
+>>>>>>> d898ea7bce341dd60a49ddd8bd1c62af4e2ed98f
 </html>
