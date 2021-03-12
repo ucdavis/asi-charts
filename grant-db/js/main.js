@@ -10,7 +10,7 @@ $(document).ready(function() {
     	console.log( "second success" );
         var entry = data.feed.entry;
  		$(entry).each(function(){
-            results.push([this.gsx$program.$t,this.gsx$category.$t, this.gsx$apply.$t, this.gsx$eligibilities.$t, this.gsx$window.$t, this.gsx$type.$t, this.gsx$match.$t, this.gsx$max.$t, this.gsx$match.$synopsis, this.gsx$link.$t]);
+            results.push([this.gsx$program.$t, this.gsx$category.$t, this.gsx$apply.$t, this.gsx$eligibilities.$t, this.gsx$window.$t, this.gsx$type.$t, this.gsx$match.$t, this.gsx$max.$t,  this.gsx$synopsis.$t, this.gsx$link.$t]);
   		});
 	    var table = $('#example').DataTable( {
     		data: results,
