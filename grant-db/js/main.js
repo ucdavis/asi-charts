@@ -10,7 +10,7 @@ $(document).ready(function() {
     	console.log( "second success" );
         var entry = data.feed.entry;
  		$(entry).each(function(){
-            results.push([this.gsx$program.$t , this.gsx$farmers.$t, this.gsx$institutions.$t, this.gsx$eligibilities.$t, this.gsx$window.$t, this.gsx$type.$t, this.gsx$match.$t, this.gsx$max.$t, this.gsx$match.$synopsis, this.gsx$link.$t]);
+            results.push([this.gsx$program.$t,this.gsx$category.$t, this.gsx$farmers.$t, this.gsx$institutions.$t, this.gsx$eligibilities.$t, this.gsx$window.$t, this.gsx$type.$t, this.gsx$match.$t, this.gsx$max.$t, this.gsx$match.$synopsis, this.gsx$link.$t]);
   		});
 	    var table = $('#example').DataTable( {
     		data: results,
@@ -25,6 +25,7 @@ $(document).ready(function() {
            "order": [ 1, 'desc' ],
        columns: [
             { title: "Program" },
+	    { title: "Category" },
             { title: "Farmers and Landowners Eligible?" },
 	    { title: "Institutions Eligible?" },
             { title: "Detailed Eligibilities" },
