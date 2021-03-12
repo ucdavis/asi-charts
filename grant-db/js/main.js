@@ -27,6 +27,7 @@ $(document).ready(function() {
             { title: "Program" },
 	    { title: "Category" },
 	    { title: "Description" },
+	    { title: "Who Can Apply" },
             { title: "Detailed Eligibilities" },
             { title: "Application Window"},
             { title: "Type" },
