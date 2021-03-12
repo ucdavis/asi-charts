@@ -23,14 +23,7 @@ $(document).ready(function() {
       columns: [2,3]
     }, 
            "order": [ 1, 'desc' ],
-        columns: [
-            { title: "Title" },
-            { title: "Year" },
-            { title: "Topic Areas"},
-            { title: "Material Type" },
-						{ title: "Link",
-                "render": function ( data, type, row, meta ) {
-      return '<a href=" columns: [
+       columns: [
             { title: "Program" },
             { title: "Description" },
             { title: "Specific Eligibilities" },
