@@ -32,7 +32,6 @@ $(document).ready(function() {
             }
         ],
         dom: 'Bfrtip',
-           "order": [ 0, 'desc' ],
        columns: [
       { title: "Program" },
 	    { title: "Category" },
