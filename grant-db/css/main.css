@@ -1,3 +1,16 @@
 
 th { font-size: 14px; }
 td { font-size: 12px; }
+
+th { font-size: 12px; }
+td { font-size: 11px; }
+
+input.dtsp-search {
+  font-size: 20px !important;
+  color: blue !important;
+}
+
+input.dtsp-search::placeholder {
+  font-size: 20px !important;
+  color: red !important;
+}
