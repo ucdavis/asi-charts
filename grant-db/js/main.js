@@ -16,6 +16,7 @@ $(document).ready(function() {
 		    responsive: true,
         language: {
             searchPanes: {
+            dataLength: false,
                 clearMessage: 'Clear Selections',
                 collapse: {0: 'SEARCH OPTIONS', _: 'Search Options (%d)'},
             },},
