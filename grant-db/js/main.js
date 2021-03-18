@@ -49,6 +49,8 @@ $(document).ready(function() {
              
         }],
     	columnDefs: [
+      {targets: [0],
+className: 'bolded'},
       {
         targets: [2,3],
         "visible": true,
