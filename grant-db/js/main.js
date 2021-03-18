@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     var results = [];
     var url = "https://spreadsheets.google.com/feeds/list/1DJlGJsiLK4EZUp3MuX8iqY_eFYgwze4l8S_jNZGskCw/1/public/values?alt=json";
@@ -13,12 +14,7 @@ $(document).ready(function() {
   		});
 	    var table = $('#example').DataTable( {
     		data: results,
-		    responsive: {
-            details: {
-                type: 'column',
-                target: 'tr'
-            }
-        },
+		    responsive: true,
         dom: 'Pfrtip',
         searchPanes:{
           controls: false,
@@ -56,13 +52,7 @@ $(document).ready(function() {
         searchPanes: {
           orthogonal:'sp'
         }
-      },
-      {
-            className: 'control',
-            orderable: false,
-            targets:   0
-        }
-      ]}
+      }]}
   	)
             new $.fn.dataTable.FixedHeader(table);
             })
@@ -73,5 +63,3 @@ $(document).ready(function() {
     	console.log( "complete" );
   	});
     });
-
-  
