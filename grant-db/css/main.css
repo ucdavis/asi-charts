@@ -3,7 +3,6 @@
 .dataTables_wrapper {
     font-family: "Helvetica Neue", HelveticaNeue, Verdana, Arial, Helvetica, sans-serif;
     font-size: 11px;
-    direction: rtl;
     position: relative;
     clear: both;
     *zoom: 1;
