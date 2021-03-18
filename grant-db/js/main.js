@@ -44,7 +44,7 @@ $(document).ready(function() {
                         { title: "Detailed Eligibilities" },
             { title: "Link",
                 "render": function ( data, type, row, meta ) {
-      return '<a href="'+data+'">Learn More</a>';
+      return '<a href="'+data+'" target=_blank >Learn More</a>';
             },
              
         }],
