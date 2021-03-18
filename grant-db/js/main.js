@@ -1,65 +1,40 @@
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>DataTables</title>
 
-$(document).ready(function() {
-    var results = [];
-    var url = "https://spreadsheets.google.com/feeds/list/1DJlGJsiLK4EZUp3MuX8iqY_eFYgwze4l8S_jNZGskCw/1/public/values?alt=json";
-    
-    var jqxhr = $.getJSON(url, function() {
-        console.log( "success" );
-	})
-  	.done(function(data) {
-    	console.log( "second success" );
-        var entry = data.feed.entry;
- 		$(entry).each(function(){
-            results.push([this.gsx$program.$t, this.gsx$category.$t, this.gsx$type.$t, this.gsx$synopsis.$t, this.gsx$apply.$t, this.gsx$eligibilities.$t, this.gsx$window.$t, this.gsx$match.$t, this.gsx$max.$t, this.gsx$link.$t]);
-  		});
-	    var table = $('#example').DataTable( {
-    		data: results,
-		    responsive: true,
-        dom: 'Pfrtip',
-        searchPanes:{
-          controls: false,
-          cascadePanes: true,
-      threshold: 1,
-      columns: [4]
-    }, 
-           "order": [ 0, 'desc' ],
-       columns: [
-            { title: "Program" },
-	    { title: "Category" },
-	    { title: "Type" },
-	    { title: "Description" },
-	    { title: "Who Can Apply" },
-            { title: "Detailed Eligibilities" },
-            { title: "Application Window"},
-            { title: "Match Requirement? (grants only)" },
-            { title: "Maximum Amount" },
-            { title: "Link",
-                "render": function ( data, type, row, meta ) {
-      return '<a href="'+data+'">Learn More</a>';
-            },
+<link rel="stylesheet" href="css/main.css">
+        
+<script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"></script>  
+<link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" type="text/javascript"></script>
+
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.jqueryui.min.js" type="text/javascript"></script>  
+<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.10.24/css/dataTables.jqueryui.min.css" rel="stylesheet">
+
+
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+<link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
              
-        }],
-    	columnDefs: [
-      {
-        targets: [4],
-        "visible": false,
-        render: function (data, type, row) {
-          if (type === 'sp') {
-            return data.split('; ')
-          }
-          return data;
-        },
-        searchPanes: {
-          orthogonal:'sp'
-        }
-      }]}
-  	)
-            new $.fn.dataTable.FixedHeader(table);
-            })
-  	.fail(function() {
-    	console.log( "error" );
-  	})
-  	.always(function() {
-    	console.log( "complete" );
-  	});
-    });
+<script src="https://cdn.datatables.net/fixedheader/3.1.7/js/dataTables.fixedHeader.min.js" type="text/javascript"></script>
+<link href="https://cdn.datatables.net/fixedheader/3.1.7/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+
+<script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js" type="text/javascript"></script>
+<link href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.bootstrap.min.css" rel="stylesheet">      
+<script src="https://cdn.datatables.net/responsive/2.2.5/js/responsive.bootstrap.min.js" type="text/javascript"></script>  
+        
+<script src="https://cdn.datatables.net/searchpanes/1.1.1/js/dataTables.searchPanes.min.js" type="text/javascript"></script>
+<link href="https://cdn.datatables.net/searchpanes/1.1.1/css/searchPanes.dataTables.min.css" rel="stylesheet">   
+      
+<script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js" type="text/javascript"></script>
+<link href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css" rel="stylesheet">
+
+    </head>
+      <body>
+ <script src="js/main.js"></script>
+        <table id="example" class="display" cellspacing="0">
+    </table>
+    </body>
+</html>
