@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     var results = [];
     var url = "https://spreadsheets.google.com/feeds/list/1DJlGJsiLK4EZUp3MuX8iqY_eFYgwze4l8S_jNZGskCw/1/public/values?alt=json";
@@ -10,29 +9,39 @@ $(document).ready(function() {
     	console.log( "second success" );
         var entry = data.feed.entry;
  		$(entry).each(function(){
-            results.push([this.gsx$program.$t, this.gsx$category.$t, this.gsx$type.$t, this.gsx$synopsis.$t, this.gsx$apply.$t, this.gsx$eligibilities.$t, this.gsx$window.$t, this.gsx$match.$t, this.gsx$max.$t, this.gsx$link.$t]);
+            results.push([this.gsx$program.$t, this.gsx$category.$t, this.gsx$type.$t, this.gsx$apply.$t, this.gsx$synopsis.$t,  this.gsx$window.$t, this.gsx$match.$t, this.gsx$max.$t, this.gsx$eligibilities.$t, this.gsx$link.$t]);
   		});
 	    var table = $('#example').DataTable( {
     		data: results,
 		    responsive: true,
-        dom: 'Pfrtip',
-        searchPanes:{
+        language: {
+            searchPanes: {
+                clearMessage: 'Clear Selections',
+                collapse: {0: 'SEARCH OPTIONS', _: 'Search Options (%d)'},
+            },},
+        buttons: [
+            {
+                extend: 'searchPanes',
+                config: {
           controls: false,
           cascadePanes: true,
       threshold: 1,
-      columns: [4]
-    }, 
+      columns: [1,2,3]
+                }
+            }
+        ],
+        dom: 'Bfrtip',
            "order": [ 0, 'desc' ],
        columns: [
-            { title: "Program" },
+      { title: "Program" },
 	    { title: "Category" },
 	    { title: "Type" },
+      { title: "Who Can Apply" },
 	    { title: "Description" },
-	    { title: "Who Can Apply" },
-            { title: "Detailed Eligibilities" },
             { title: "Application Window"},
             { title: "Match Requirement? (grants only)" },
             { title: "Maximum Amount" },
+                        { title: "Detailed Eligibilities" },
             { title: "Link",
                 "render": function ( data, type, row, meta ) {
       return '<a href="'+data+'">Learn More</a>';
@@ -41,8 +50,8 @@ $(document).ready(function() {
         }],
     	columnDefs: [
       {
-        targets: [4],
-        "visible": false,
+        targets: [2,3],
+        "visible": true,
         render: function (data, type, row) {
           if (type === 'sp') {
             return data.split('; ')
@@ -52,7 +61,8 @@ $(document).ready(function() {
         searchPanes: {
           orthogonal:'sp'
         }
-      }]}
+      }
+      ]}
   	)
             new $.fn.dataTable.FixedHeader(table);
             })
