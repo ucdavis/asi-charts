@@ -1,1 +1,7 @@
 
+.dataTables_wrapper {
+    font-family: "Helvetica Neue", HelveticaNeue, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    position: relative;
+    clear: both;
+}
