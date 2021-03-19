@@ -34,8 +34,8 @@ $(document).ready(function() {
         dom: 'Bfrtip',
        columns: [
       { title: "Program" },
-	    { title: "Category" },
-	    { title: "Type" },
+	    { title: "Issue Area" },
+	    { title: "Funding Type" },
       { title: "Who Can Apply" },
 	    { title: "Description" },
             { title: "Application Window"},
