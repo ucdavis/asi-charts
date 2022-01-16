@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var results = [];
-    var url = "https://spreadsheets.google.com/feeds/list/1DJlGJsiLK4EZUp3MuX8iqY_eFYgwze4l8S_jNZGskCw/1/public/values?alt=json";
+    var url = "hhttps://sheets.googleapis.com/v4/spreadsheets/1DJlGJsiLK4EZUp3MuX8iqY_eFYgwze4l8S_jNZGskCw/values/Sheet1?key=AIzaSyD2s4QcRqjyuXotnrwm3EIPTJCp1mX8pVo
+";
     
     var jqxhr = $.getJSON(url, function() {
         console.log( "success" );
