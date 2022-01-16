@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
     var results = [];
-    var url = "https://spreadsheets.google.com/feeds/list/1CS6TU1metcFNxhuWKDg7TmyPWdlffp7t-HTZbYdG5Ck/1/public/values?alt=json";
+    var url = "https://sheets.googleapis.com/v4/spreadsheets/1CS6TU1metcFNxhuWKDg7TmyPWdlffp7t-HTZbYdG5Ck/values/Sheet1?key=AIzaSyD2s4QcRqjyuXotnrwm3EIPTJCp1mX8pVo";
     
     var jqxhr = $.getJSON(url, function() {
         console.log( "success" );
